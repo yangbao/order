@@ -40,8 +40,7 @@ public class OrderController {
             log.error("【创建订单】参数不正确, orderForm={}", orderForm);
             throw new OrderException(ResultEnum.PARAM_ERROR.getCode(),
                     bindingResult.getFieldError().getDefaultMessage());
-        }
-        // orderForm -> orderDTO
+        }        // orderForm -> orderDTO
         OrderDTO orderDTO = OrderForm2OrderDTOConverter.convert(orderForm);
 
         OrderDTO result = orderService.createOrder(orderDTO);

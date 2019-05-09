@@ -8,7 +8,8 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-//订单商品表,
+//订单商品表,订单商品  - 订单商品表的意义在于，虽然有些信息与商品表重复了，
+// 可是在促销的时候商品信息可能会有变化。在下单的时候做一个记录，
 public class OrderDetail {
 
     @Id
