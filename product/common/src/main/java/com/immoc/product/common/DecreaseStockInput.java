@@ -1,18 +1,18 @@
-package com.imooc.product.dto;
+package com.immoc.product.common;
 
 import lombok.Data;
 
 @Data
-public class CartDTO {
+public class DecreaseStockInput {
 
     private String productId;
 
     private Integer productQuantity;
 
-    public CartDTO() {
+    public DecreaseStockInput() {
     }
 
-    public CartDTO(String productId, Integer productQuantity) {
+    public DecreaseStockInput(String productId, Integer productQuantity) {
         this.productId = productId;
         this.productQuantity = productQuantity;
     }

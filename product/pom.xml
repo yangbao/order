@@ -6,7 +6,17 @@
 	<groupId>com.imooc</groupId>
 	<artifactId>product</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
+
+	<modules>
+		<!--放置基础的实体,对应的文件夹的名字而不是里面artifactId的名字-->
+	<module>common</module>
+		<!--一些具体的服务提供-->
+		<module>server</module>
+		<!--向外提供服务接口的暴露-->
+		<module>client</module>
+	</modules>
+
 
 	<name>product</name>
 	<description>Demo project for Spring Boot</description>
@@ -23,35 +33,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.M2</spring-cloud.version>
+
+		<product-common.version>0.0.1-SNAPSHOT</product-common.version>
 	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
@@ -62,18 +46,16 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>com.imooc</groupId>
+				<artifactId>product-common</artifactId>
+				<version>${product-common.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
+<!--仓库地址，用的版本不是正式版，用正式版就不需要这个了-->
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
