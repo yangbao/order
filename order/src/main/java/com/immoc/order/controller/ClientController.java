@@ -1,40 +1,40 @@
 package com.immoc.order.controller;
 
-import com.immoc.order.client.CallServiceClientTest;
-import com.immoc.order.client.ProductClient;
-import com.immoc.order.dataobject.ProductInfo;
-import com.immoc.order.dto.CartDTO;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Arrays;
-import java.util.List;
+//import com.immoc.order.client.CallServiceClientTest;
+//import com.immoc.order.client.ProductClient;
+//import com.immoc.order.dataobject.ProductInfo;
+//import com.immoc.order.dto.CartDTO;
+//import lombok.extern.slf4j.Slf4j;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RestController;
+//
+//import java.util.Arrays;
+//import java.util.List;
 
 /**
  * 远程服务调用的测试
  */
-@RestController
-@RequestMapping("clientRequest")
-@Slf4j
-public class ClientController {
+//@RestController
+//@RequestMapping("clientRequest")
+//@Slf4j
+//public class ClientController {
 
 //    @Autowired
 //    private LoadBalancerClient loadBalancerClient;
 //    @Autowired
 //    private RestTemplate restTemplate;
 
-    @Autowired
-    private CallServiceClientTest serviceClient;
+//    @Autowired
+//    private CallServiceClientTest serviceClient;
+//
+//    @Autowired
+//    private ProductClient productClient;
 
-    @Autowired
-    private ProductClient productClient;
-
-    @GetMapping("getProductMsg")
-    public String getProductMsg() {
+//    @GetMapping("getProductMsg")
+//    public String getProductMsg() {
 
         //1.第一种方式(直接使用restTemplate, url写死)
 //        RestTemplate restTemplate = new RestTemplate();
@@ -52,23 +52,23 @@ public class ClientController {
 //        public RestTemplate restTemplate(){
 //            return new RestTemplate();
 //        }
-        //使用Feign来调用服务
-
-        String response = serviceClient.getServerMsg();
-
-        log.info("response={}", response);
-        return response;
-    }
-
-    @PostMapping("/getProductList")
-    public String getProductList() {
-        List<ProductInfo> productInfoList = productClient.listForOrder(Arrays.asList("164103465734242707"));
-        log.info("response={}", productInfoList);
-        return "ok";
-    }
-    @GetMapping("/productDecreaseStock")
-    public String productDecreaseStock() {
-        productClient.decreaseStock(Arrays.asList(new CartDTO("164103465734242707", 3)));
-        return "ok";
-    }
-}
+        //使用Feign来调用服务, 转移到product Module里面去了
+//
+//        String response = serviceClient.getServerMsg();
+//
+//        log.info("response={}", response);
+//        return response;
+//    }
+//
+//    @PostMapping("/getProductList")
+//    public String getProductList() {
+//        List<ProductInfo> productInfoList = productClient.listForOrder(Arrays.asList("164103465734242707"));
+//        log.info("response={}", productInfoList);
+//        return "ok";
+//    }
+//    @GetMapping("/productDecreaseStock")
+//    public String productDecreaseStock() {
+//        productClient.decreaseStock(Arrays.asList(new CartDTO("164103465734242707", 3)));
+//        return "ok";
+//    }
+//}
