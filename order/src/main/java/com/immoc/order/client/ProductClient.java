@@ -1,10 +1,10 @@
 package com.immoc.order.client;
 
-import com.immoc.order.dataobject.ProductInfo;
-import com.immoc.order.dto.CartDTO;
-import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+//import com.immoc.order.dataobject.ProductInfo;
+//import com.immoc.order.dto.CartDTO;
+//import org.springframework.cloud.netflix.feign.FeignClient;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 //@FeignClient(name = "PRODUCT")

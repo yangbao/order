@@ -1,6 +1,6 @@
 package com.immoc.order.converter;
 import com.google.gson.Gson;
-import com.google.common.reflect.TypeToken;
+import com.google.gson.reflect.TypeToken;
 import com.immoc.order.dataobject.OrderDetail;
 import com.immoc.order.dto.OrderDTO;
 import com.immoc.order.enums.ResultEnum;
