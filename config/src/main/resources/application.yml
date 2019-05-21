@@ -5,12 +5,13 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/spring_cloud_ordering_service/config-repo.git
-          username: 754576021@qq.com
+#          uri: https://gitee.com/spring_cloud_ordering_service/config-repo.git
+          uri: https://github.com/yangbao/webHookTest.git
+          username: yangbaobgkp@sina.com
           password: bgkp108512
-          basedir: /e/Users/bgkp/IdeaProjects/config/basedir #local repo
+          basedir: /Users/bgkp/IdeaProjects/config/local_config #local repo
   rabbitmq:
-    host: 192.168.1.21
+    host: 192.168.1.17
     port: 5672
     username: guest
     password: guest
