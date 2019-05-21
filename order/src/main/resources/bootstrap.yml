@@ -7,6 +7,14 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+#    stream:
+#      bindings:
+#        myInput:
+#          destination: myStreamExchange #指定输入通道对应的主题名
+#          group: orderGroup
+#        myOutput:
+#          destination: myStreamExchange
+
   rabbitmq:
       host: 192.168.1.17
       port: 5672
