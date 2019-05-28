@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#设置timeout 新版本
+zuul:
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000
+    #路由规则
+    #zull:
+    #  routes:
+    #    myRoute:  # /myProduct/product/list -> /product/product/list
+    #      path: /myRoute/**
+    #      serviceId: config
+  routes:
+    #    简洁写法
+    product: /myProduct/**
+  ignored-patterns: #set 集合
+      - /**/product/listForOrder
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: routes,filters

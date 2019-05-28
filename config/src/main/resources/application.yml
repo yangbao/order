@@ -11,7 +11,7 @@ spring:
           password: bgkp108512
           basedir: /Users/bgkp/IdeaProjects/config/local_config #local repo
   rabbitmq:
-    host: 192.168.1.17
+    host: 192.168.43.9
     port: 5672
     username: guest
     password: guest
