@@ -27,6 +27,7 @@ zuul:
     product: /myProduct/**
   ignored-patterns: #set 集合
       - /**/product/listForOrder
+  sensitive-headers:
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000
